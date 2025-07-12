@@ -1,0 +1,160 @@
+/* styles/accessibility.css */
+
+/* Base font size for the document */
+html {
+  font-size: 16px; /* Default base font size */
+  scroll-behavior: smooth;
+}
+
+/* Ensure all text elements inherit the base font size */
+body {
+  font-size: 1rem; /* Relative to html font-size */
+  line-height: 1.6;
+}
+
+/* Font size adjustments for headings when base font size changes */
+h1 {
+  font-size: 2.25rem;
+} /* 36px at base 16px */
+h2 {
+  font-size: 1.875rem;
+} /* 30px at base 16px */
+h3 {
+  font-size: 1.5rem;
+} /* 24px at base 16px */
+h4 {
+  font-size: 1.25rem;
+} /* 20px at base 16px */
+h5 {
+  font-size: 1.125rem;
+} /* 18px at base 16px */
+h6 {
+  font-size: 1rem;
+} /* 16px at base 16px */
+
+/* Text elements */
+p,
+div,
+span,
+li,
+a,
+button,
+input,
+textarea,
+label {
+  font-size: inherit;
+}
+
+/* Navigation specific font sizes */
+.nav-item {
+  font-size: 0.875rem; /* 14px at base 16px */
+}
+
+.nav-item-large {
+  font-size: 1rem; /* 16px at base 16px */
+}
+
+/* Skip to content link styling */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 9999;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Focus styles for better accessibility */
+*:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .accessibility-bar {
+    background-color: #000;
+    border-bottom: 2px solid #fff;
+  }
+
+  .nav-bg {
+    background-color: #1a1a1a;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Print styles */
+@media print {
+  .accessibility-bar,
+  .search-bar,
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  .navigation {
+    position: static !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Sticky navigation styles */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Font size transition for smooth changes */
+html {
+  transition: font-size 0.3s ease;
+}
+
+/* Ensure buttons maintain proper padding with font size changes */
+button {
+  padding: 0.5rem 1rem;
+  min-height: 2.5rem;
+}
+
+/* Form elements should scale properly */
+input,
+textarea,
+select {
+  padding: 0.5rem;
+  min-height: 2.5rem;
+}
+
+/* Logo container adjustments */
+.logo-container {
+  min-width: 4rem;
+  min-height: 4rem;
+}
+
+@media (min-width: 768px) {
+  .logo-container {
+    min-width: 5rem;
+    min-height: 5rem;
+  }
+}
